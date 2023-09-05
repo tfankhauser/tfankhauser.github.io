@@ -28,7 +28,7 @@
         }
         
         .hidden {
-            height: 100px;
+            height: 50px;
             color: rgba(0, 0, 0, 0);
             background-color: transparent;
             border: none;
@@ -232,13 +232,13 @@
             background: radial-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
         }
         
-        .letter-image:active .animated-mail {
+        .letter-image:hover .animated-mail {
             transform: translateY(50px);
             -webkit-transform: translateY(50px);
             -moz-transform: translateY(50px);
         }
         
-        .letter-image:active .animated-mail .top-fold {
+        .letter-image:hover .animated-mail .top-fold {
             transition: transform 0.4s, z-index 0.2s;
             transform: rotateX(180deg);
             -webkit-transition: transform 0.4s, z-index 0.2s;
@@ -248,7 +248,7 @@
             z-index: 0;
         }
         
-        .letter-image:active .animated-mail .letter {
+        .letter-image:hover .animated-mail .letter {
             height: 280px;
             content: 'ram avtar';
             color: #000;
@@ -297,6 +297,21 @@
 
     </div>
 
+    <div id="myModal3" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <h1>Ich bin dir wirklich extrem dankbar.</h1>
+            <h2>Es war falsch von mir, dich mit so viel Arbeit allein zu lassen.</h2>
+            <p>Ich weiß, dass ich leider nicht viel wieder gut machen kann, will dir aber trotzdem eine kleine Freude bereiten. <br>Du kannst dir aussuchen, ob du lieber
+                <li>eine Stunde im Wasserbad schwebst</li> oder
+                <li>eine Stunde bei einer Thaimassage durchgeknetet wirst.</li>
+            </p>
+            <button class="ok">Oki</button>
+        </div>
+
+    </div>
+
     <div class="letter-image">
         <div class="animated-mail">
             <div class="back-fold"></div>
@@ -305,7 +320,8 @@
                 <div class="letter-title"></div>
                 <div class="letter-context"></div>
                 <div class="letter-context-body">
-                                        <p><strong>Liebe <br>Paula</strong><br> vielen Dank für Alles. Als kleine Anerkennung kannst du dir aussuchen ob du lieber eine Stunde im Wasserbad schwebend entspannen willst, oder eine Stunde Thai-Massage genießen willst.</p>
+                    <p><strong>Liebe Paula</strong><br> Vielen Dank für Alles.</p>
+                    <button class="letterbutton">Klick mich!</button>
                 </div>
                 <div class="letter-stamp">
                     <div class="letter-stamp-inner"></div>
@@ -323,6 +339,7 @@
     // Get the modal
     var modal = document.getElementById("myModal");
     var modal2 = document.getElementById("myModal2");
+    var modal3 = document.getElementById("myModal3");
 
     // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close")[0];
@@ -331,6 +348,7 @@
     var ok = document.getElementsByClassName("ok")[0];
     var hiddenbutton = document.getElementsByClassName("hidden")[0];
     var letter1 = document.getElementsByClassName("letter-image")[0];
+    var letterbutton = document.getElementsByClassName("letterbutton")[0];
 
     // When the user clicks on the button, open the modal
     window.onload = function() {
@@ -352,6 +370,10 @@
 
     hiddenbutton.onclick = function() {
         letter1.style.display = "block";
+    }
+
+    letterbutton.onclick = function() {
+        modal3.style.display = "block";
     }
 </script>
 
