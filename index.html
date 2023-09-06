@@ -265,6 +265,12 @@
         * {
             font-family: sans-serif;
         }
+        
+        .pech {
+            min-height: 100px;
+            display: table-cell;
+            vertical-align: middle
+        }
     </style>
 </head>
 
@@ -304,6 +310,10 @@
         </div>
 
     </div>
+
+
+    <p>Ok, Pech.</p>
+
 
     <div id="myModal3" class="modal">
 
@@ -378,6 +388,10 @@
         modal2.style.display = "none";
     }
 
+    no.onclick = function() {
+        modal.style.display = "none";
+        document.getElementById("bg").style.backgroundImage = "url('./pech.jpg')";
+    }
     yes.onclick = function() {
         modal.style.display = "none";
         document.getElementById("bg").style.backgroundImage = "url('./DackelMitM.png')";
