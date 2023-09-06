@@ -42,6 +42,10 @@
         }
         /* The Modal (background) */
         
+        .button {
+            font-size: 20px;
+        }
+        
         .modal {
             display: none;
             /* Hidden by default */
@@ -232,13 +236,13 @@
             background: radial-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
         }
         
-        .letter-image:hover .animated-mail {
+        .letter-image:active .animated-mail {
             transform: translateY(50px);
             -webkit-transform: translateY(50px);
             -moz-transform: translateY(50px);
         }
         
-        .letter-image:hover .animated-mail .top-fold {
+        .letter-image:active .animated-mail .top-fold {
             transition: transform 0.4s, z-index 0.2s;
             transform: rotateX(180deg);
             -webkit-transition: transform 0.4s, z-index 0.2s;
@@ -248,7 +252,7 @@
             z-index: 0;
         }
         
-        .letter-image:hover .animated-mail .letter {
+        .letter-image:active .animated-mail .letter {
             height: 280px;
             content: 'ram avtar';
             color: #000;
@@ -256,6 +260,10 @@
         
         .letter-image:hover .shadow {
             width: 250px;
+        }
+        
+        * {
+            font-family: sans-serif;
         }
     </style>
 </head>
@@ -290,7 +298,7 @@
         <!-- Modal content -->
         <div class="modal-content">
             <h1>Vielen Dank für den Matcha!</h1>
-            <h2>Als Dank hat Wiggles währendessen etwas für dich in einer der Umzugskartons in deiner Wohnung versteckt.</h2>
+            <h2>Als Dank hat Wiggles währendessen etwas für dich in einem der Umzugskartons in deiner Wohnung versteckt.</h2>
             <p>Klick auf den richtigen Karton um herauszufinden, was er versteckt hat.</p>
             <button class="ok">Oki</button>
         </div>
@@ -302,12 +310,14 @@
         <!-- Modal content -->
         <div class="modal-content">
             <h1>Ich bin dir wirklich extrem dankbar.</h1>
-            <h2>Es war falsch von mir, dich mit so viel Arbeit allein zu lassen.</h2>
-            <p>Ich weiß, dass ich leider nicht viel wieder gut machen kann, will dir aber trotzdem eine kleine Freude bereiten. <br>Du kannst dir aussuchen, ob du lieber
+            <h2>Es war falsch von mir, dich mit so viel Arbeit und Stress allein zu lassen.</h2>
+            <p>Ich weiß, dass ich leider nicht viel wieder gut machen kann, will dir aber trotzdem eine kleine Freude bereiten und dir ein bisschen Entspannung liefern. <br>Du kannst dir aussuchen, ob du lieber
                 <li>eine Stunde im Wasserbad schwebst</li> oder
                 <li>eine Stunde bei einer Thaimassage durchgeknetet wirst.</li>
+                Ich kümmere mich dann um alles weitere dazu je nach deiner Wahl.
             </p>
-            <button class="ok">Oki</button>
+
+            <button class="closeFinish">Schließen</button>
         </div>
 
     </div>
@@ -349,11 +359,19 @@
     var hiddenbutton = document.getElementsByClassName("hidden")[0];
     var letter1 = document.getElementsByClassName("letter-image")[0];
     var letterbutton = document.getElementsByClassName("letterbutton")[0];
+    var closeFinishbutton = document.getElementsByClassName("closeFinish")[0];
 
     // When the user clicks on the button, open the modal
     window.onload = function() {
-        modal.style.display = "block";
         letter1.style.display = "none";
+
+        setTimeout(() => {
+            modal.style.display = "block"
+        }, 5000);
+    }
+
+    closeFinishbutton.onclick = function() {
+        modal3.style.display = "none";
     }
 
     ok.onclick = function() {
